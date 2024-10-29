@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type FAQ {
+  id: Int!
+  question: String!
+  answer: String!
+  createdAt: DateTime!
+  updatedAt: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  faqs: [FAQ!]!
+}
+
+type Mutation {
+  createFAQ(input: CreateFAQInput!): FAQ!
+  updateFAQ(input: UpdateFAQInput!): FAQ!
+  deleteFAQ(id: Int!): FAQ!
+}
+
+input CreateFAQInput {
+  question: String!
+  answer: String!
+}
+
+input UpdateFAQInput {
+  question: String
+  answer: String
+  id: Int!
+}
